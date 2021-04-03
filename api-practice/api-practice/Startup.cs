@@ -1,17 +1,13 @@
+using ApiPractice.DbContexts;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace api_practice
+namespace ApiPractice
 {
     public class Startup
     {
@@ -25,7 +21,26 @@ namespace api_practice
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            RegisterDatabase(services);
+            RegisterAutoMapper(services);
+
             services.AddControllers();
+        }
+
+        public void RegisterDatabase(IServiceCollection services)
+        {
+            var databaseOptions = Configuration.GetSection(DatabaseSettings.Database).Get<DatabaseSettings>();
+            services.AddDbContext<ApiPracticeDbContext>(options => options.UseNpgsql(databaseOptions.ConnectionString));
+        }
+
+        public void RegisterAutoMapper(IServiceCollection services)
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.AddMaps(typeof(Startup).Assembly);
+            });
+
+            services.AddSingleton(config.CreateMapper());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -40,7 +55,7 @@ namespace api_practice
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

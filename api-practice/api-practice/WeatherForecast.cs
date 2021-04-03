@@ -1,6 +1,6 @@
 using System;
 
-namespace api_practice
+namespace ApiPractice
 {
     public class WeatherForecast
     {

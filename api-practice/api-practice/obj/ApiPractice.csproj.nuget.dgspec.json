@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rodri\\git-repos\\api-practice\\api-practice\\api-practice\\api-practice.csproj": {}
+    "C:\\Users\\rodri\\git-repos\\api-practice\\api-practice\\api-practice\\ApiPractice.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rodri\\git-repos\\api-practice\\api-practice\\api-practice\\api-practice.csproj": {
+    "C:\\Users\\rodri\\git-repos\\api-practice\\api-practice\\api-practice\\ApiPractice.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rodri\\git-repos\\api-practice\\api-practice\\api-practice\\api-practice.csproj",
-        "projectName": "api-practice",
-        "projectPath": "C:\\Users\\rodri\\git-repos\\api-practice\\api-practice\\api-practice\\api-practice.csproj",
+        "projectUniqueName": "C:\\Users\\rodri\\git-repos\\api-practice\\api-practice\\api-practice\\ApiPractice.csproj",
+        "projectName": "ApiPractice",
+        "projectPath": "C:\\Users\\rodri\\git-repos\\api-practice\\api-practice\\api-practice\\ApiPractice.csproj",
         "packagesPath": "C:\\Users\\rodri\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\rodri\\git-repos\\api-practice\\api-practice\\api-practice\\obj\\",
         "projectStyle": "PackageReference",
@@ -40,7 +40,17 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.4, )"
             },
