@@ -1,10 +1,13 @@
-﻿using ApiPractice.Entities;
-
-namespace ApiPractice.Services.Interfaces
+﻿namespace ApiPractice.Services.Interfaces
 {
-    interface IUserService
+    public interface IUserService
     {
-        public void Save(User user);
+        void Save(Entities.User.User user);
 
+        void Update(long id, Entities.User.User user);
+
+        void Delete(long id);
+
+        Entities.User.User FindById(long id);
     }
 }

@@ -1,4 +1,4 @@
-﻿using ApiPractice.Entities;
+﻿using ApiPractice.Entities.User;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiPractice.DbContexts

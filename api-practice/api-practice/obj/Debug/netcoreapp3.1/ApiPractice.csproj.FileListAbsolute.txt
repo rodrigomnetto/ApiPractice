@@ -23,7 +23,6 @@ C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcor
 C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
-C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\obj\Debug\netcoreapp3.1\ApiPractice.csprojAssemblyReference.cache
 C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\obj\Debug\netcoreapp3.1\ApiPractice.AssemblyInfoInputs.cache
 C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\obj\Debug\netcoreapp3.1\ApiPractice.AssemblyInfo.cs
 C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\obj\Debug\netcoreapp3.1\ApiPractice.csproj.CoreCompileInputs.cache
@@ -39,3 +38,4 @@ C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\obj\Debug\netcor
 C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\Humanizer.dll
 C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\obj\Debug\netcoreapp3.1\ApiPractice.csprojAssemblyReference.cache

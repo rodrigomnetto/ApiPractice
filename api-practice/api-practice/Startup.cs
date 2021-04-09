@@ -1,4 +1,6 @@
 using ApiPractice.DbContexts;
+using ApiPractice.Services.Interfaces;
+using ApiPractice.Services.User;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,11 +8,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace ApiPractice
 {
     public class Startup
     {
+        public static IServiceProvider ServiceProvider { get; private set; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -23,6 +28,7 @@ namespace ApiPractice
         {
             RegisterDatabase(services);
             RegisterAutoMapper(services);
+            RegisterServices(services);
 
             services.AddControllers();
         }
@@ -43,6 +49,11 @@ namespace ApiPractice
             services.AddSingleton(config.CreateMapper());
         }
 
+        public void RegisterServices(IServiceCollection services)
+        {
+            services.AddTransient<IUserService, UserService>();
+        }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -50,7 +61,7 @@ namespace ApiPractice
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -61,6 +72,8 @@ namespace ApiPractice
             {
                 endpoints.MapControllers();
             });
+
+            ServiceProvider = app.ApplicationServices;
         }
     }
 }
