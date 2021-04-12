@@ -2,12 +2,14 @@
 {
     public interface IUserService
     {
-        void Save(Entities.User.User user);
+        bool Create(Entities.User.User user);
 
-        void Update(long id, Entities.User.User user);
+        bool Update(long id, Entities.User.User user);
 
-        void Delete(long id);
+        bool Delete(long id);
 
         Entities.User.User FindById(long id);
+
+        Entities.User.User FindByEmailPassword(string email, string password);
     }
 }

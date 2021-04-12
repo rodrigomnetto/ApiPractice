@@ -39,3 +39,11 @@ C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcor
 C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\obj\Debug\netcoreapp3.1\ApiPractice.csprojAssemblyReference.cache
+C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\rodri\git-repos\api-practice\api-practice\api-practice\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll

@@ -1,7 +1,7 @@
 ﻿using ApiPractice.Entities.User;
 using Microsoft.EntityFrameworkCore;
 
-namespace ApiPractice.DbContexts
+namespace ApiPractice.Contexts
 {
     public class ApiPracticeDbContext : DbContext
     {

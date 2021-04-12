@@ -1,4 +1,4 @@
-﻿namespace ApiPractice
+﻿namespace ApiPractice.Settings
 {
     public class DatabaseSettings
     {

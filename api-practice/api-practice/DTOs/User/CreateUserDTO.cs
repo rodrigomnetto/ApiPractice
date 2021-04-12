@@ -2,7 +2,7 @@
 
 namespace ApiPractice.DTOs.User
 {
-    public class SaveUserDTO
+    public class CreateUserDTO
     {
         [Required]
         public string Name { get; set; }
