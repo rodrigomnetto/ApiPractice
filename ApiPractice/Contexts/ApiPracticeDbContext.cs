@@ -1,4 +1,5 @@
-﻿using ApiPractice.Entities.User;
+﻿using ApiPractice.Entities.Character;
+using ApiPractice.Entities.User;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiPractice.Contexts
@@ -7,6 +8,8 @@ namespace ApiPractice.Contexts
     {
         public ApiPracticeDbContext(DbContextOptions<ApiPracticeDbContext> options) : base(options) { }
 
-        public DbSet<User> User { get; set; }
+        public DbSet<User> Users { get; set; }
+
+        public DbSet<Character> Characters { get; set; }
     }
 }

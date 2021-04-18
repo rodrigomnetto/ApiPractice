@@ -20,19 +20,16 @@ namespace ApiPractice.Controllers.v1.User
             _userService = userService;
         }
 
-        //implementar find com paginacao, ver videos, query params, fazer a entidade de favorite_jobs do usuario
-
         [HttpGet]
         [Authorize]
         public IActionResult Find()
         {
             var user = _userService.FindByEmail(HttpContext.User.FindFirst(ClaimTypes.Email).Value);
-            var userResponse = _mapper.Map<UserResponseDTO>(user);
-            
-            if (userResponse == null)
-                return NotFound();
 
-            return Ok(userResponse);
+            if (user == null)
+                return NotFound();
+            
+            return Ok(_mapper.Map<UserResponseDTO>(user));
         }
 
         [HttpPost]

@@ -1,8 +1,10 @@
 using ApiPractice.Contexts;
 using ApiPractice.Identity.Services;
 using ApiPractice.Identity.Services.Interfaces;
+using ApiPractice.Repositories.Character;
 using ApiPractice.Repositories.Interfaces;
 using ApiPractice.Repositories.User;
+using ApiPractice.Services.Character;
 using ApiPractice.Services.Interfaces;
 using ApiPractice.Services.User;
 using ApiPractice.Settings;
@@ -87,11 +89,13 @@ namespace ApiPractice
         {
             services.AddTransient<IAuthenticationService, AuthenticationService>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<ICharacterService, CharacterService>();
         }
 
         public void RegisterRepositories(IServiceCollection services)
         {
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<ICharacterRepository, CharacterRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
