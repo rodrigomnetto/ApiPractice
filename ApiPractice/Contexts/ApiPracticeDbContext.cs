@@ -1,4 +1,5 @@
 ﻿using ApiPractice.Entities.Character;
+using ApiPractice.Entities.Favorite;
 using ApiPractice.Entities.User;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,5 +12,7 @@ namespace ApiPractice.Contexts
         public DbSet<User> Users { get; set; }
 
         public DbSet<Character> Characters { get; set; }
+
+        public DbSet<FavoriteCharacter> FavoriteCharacters { get; set; }
     }
 }

@@ -10,19 +10,19 @@ namespace ApiPractice.Controllers.v1.Character
 {
     [ApiController]
     [Route("api/v1/[controller]")]
-    public class CharacterController : ControllerBase
+    public class CharactersController : ControllerBase
     {
         private readonly IMapper _mapper;
         private readonly ICharacterService _characterService;
 
-        public CharacterController(IMapper mapper, ICharacterService characterService)
+        public CharactersController(IMapper mapper, ICharacterService characterService)
         {
             _mapper = mapper;
             _characterService = characterService;
         }
 
         [HttpGet]
-        public IActionResult FindCharacters([FromQuery] FindCharacterQueryString findCharacterQuery)
+        public IActionResult Find([FromQuery] FindCharacterQueryString findCharacterQuery)
         {
             var characters = _characterService.FindCharacters(findCharacterQuery.Skip, findCharacterQuery.Take, findCharacterQuery.NameStartsWith);
 
