@@ -1,7 +1,5 @@
 ﻿using ApiPractice.Repositories.Interfaces;
 using ApiPractice.Services.Interfaces;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace ApiPractice.Services.User
 {
@@ -25,8 +23,6 @@ namespace ApiPractice.Services.User
         public bool Update(Entities.User.User user, Entities.User.User updateUser)
         {
             user.Name = updateUser.Name;
-
-            var q = new List<Entities.User.User>().Where(w => w.Email == "");
 
             _userRepository.Update(user);
             return _userRepository.SaveChanges();

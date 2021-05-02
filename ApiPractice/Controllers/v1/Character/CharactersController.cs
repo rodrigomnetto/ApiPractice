@@ -26,7 +26,7 @@ namespace ApiPractice.Controllers.v1.Character
         {
             var characters = _characterService.FindCharacters(findCharacterQuery.Skip, findCharacterQuery.Take, findCharacterQuery.NameStartsWith);
 
-            if (!characters.Any())
+            if (characters == null || !characters.Any())
                 return NotFound();
 
             return Ok(_mapper.Map<List<CharacterResponseDTO>>(characters));

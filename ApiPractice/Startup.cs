@@ -1,10 +1,13 @@
 using ApiPractice.Contexts;
 using ApiPractice.Identity.Services;
 using ApiPractice.Identity.Services.Interfaces;
+using ApiPractice.Maps.Favorite.PropertyResolver;
 using ApiPractice.Repositories.Character;
+using ApiPractice.Repositories.Favorite;
 using ApiPractice.Repositories.Interfaces;
 using ApiPractice.Repositories.User;
 using ApiPractice.Services.Character;
+using ApiPractice.Services.Favorite;
 using ApiPractice.Services.Interfaces;
 using ApiPractice.Services.User;
 using ApiPractice.Settings;
@@ -17,15 +20,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
-using System;
 using System.Text;
 
 namespace ApiPractice
 {
     public class Startup
     {
-        public static IServiceProvider ServiceProvider { get; private set; }
-
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -38,11 +38,13 @@ namespace ApiPractice
         {
             RegisterOptions(services);
             RegisterDatabase(services);
-            RegisterAutoMapper(services);
+            
             RegisterServices(services);
             RegisterRepositories(services);
 
             services.AddControllers();
+            services.AddHttpContextAccessor();
+            RegisterAutoMapper(services);
 
             var key = Encoding.ASCII.GetBytes(Configuration.GetSection(AuthenticationSettings.Authentication).Get<AuthenticationSettings>().Secret);
 
@@ -77,9 +79,13 @@ namespace ApiPractice
 
         public void RegisterAutoMapper(IServiceCollection services)
         {
+            services.AddTransient<UserResolver>();
+            services.AddTransient<CharacterResolver>();
+
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.AddMaps(typeof(Startup).Assembly);
+                cfg.ConstructServicesUsing(services.BuildServiceProvider().GetRequiredService);
             });
 
             services.AddSingleton(config.CreateMapper());
@@ -90,12 +96,14 @@ namespace ApiPractice
             services.AddTransient<IAuthenticationService, AuthenticationService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<ICharacterService, CharacterService>();
+            services.AddTransient<IFavoriteCharacterService, FavoriteCharacterService>();
         }
 
         public void RegisterRepositories(IServiceCollection services)
         {
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<ICharacterRepository, CharacterRepository>();
+            services.AddTransient<IFavoriteCharacterRepository, FavoriteCharacterRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -115,8 +123,6 @@ namespace ApiPractice
             {
                 endpoints.MapControllers();
             });
-
-            ServiceProvider = app.ApplicationServices;
         }
     }
 }

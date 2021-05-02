@@ -10,9 +10,7 @@ namespace ApiPractice.Repositories.Character
         private readonly ApiPracticeDbContext _dbContext;
 
         public CharacterRepository(ApiPracticeDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
+            => _dbContext = dbContext;
 
         public List<Entities.Character.Character> FindCharacters(int skip, int take, string nameStartsWith)
         {

@@ -9,24 +9,16 @@ namespace ApiPractice.Repositories.User
         private readonly ApiPracticeDbContext _dbContext;
 
         public UserRepository(ApiPracticeDbContext dbContext)
-        {
-            _dbContext = dbContext;
-        }
+            => _dbContext = dbContext;
         
         public void Create(Entities.User.User user)
-        {
-            _dbContext.Users.Add(user);
-        }
+            => _dbContext.Users.Add(user);
 
         public void Update(Entities.User.User user)
-        {
-            _dbContext.Users.Update(user);
-        }
+            => _dbContext.Users.Update(user);
 
         public void Delete(Entities.User.User user)
-        {
-            _dbContext.Users.Remove(user);
-        }
+            => _dbContext.Users.Remove(user);
 
         public Entities.User.User FindByEmailPassword(string email, string password)
             => _dbContext.Users.SingleOrDefault(w => w.Email == email && w.Password == password);

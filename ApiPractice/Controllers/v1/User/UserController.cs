@@ -39,11 +39,8 @@ namespace ApiPractice.Controllers.v1.User
             var user = _mapper.Map<Entities.User.User>(createUserDto);
 
             if (_userService.Create(user))
-            {
-                var userResponse = _mapper.Map<UserResponseDTO>(user);
-                return Ok(userResponse);
-            }
-
+                return Ok(_mapper.Map<UserResponseDTO>(user));
+            
             return BadRequest();
         }
 
@@ -55,11 +52,8 @@ namespace ApiPractice.Controllers.v1.User
             var updatedUser = _mapper.Map<Entities.User.User>(updateUserDto);
 
             if (_userService.Update(user, updatedUser))
-            {
-                var userResponse = _mapper.Map<UserResponseDTO>(user);
-                return Ok(userResponse);
-            }
-
+                return Ok(_mapper.Map<UserResponseDTO>(user));
+            
             return BadRequest();
         }
     }

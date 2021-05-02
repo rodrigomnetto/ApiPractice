@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "gT6+fA3te6uK22RrIYh/nhmpx9SOJlWoQdVqfTydsA1kZfeZ1yjhx/aaGXAS7I6X1mbK99U/TWkZaFAqfWdSMQ==",
+  "dgSpecHash": "NtzKiT1yQMy6XHfhDDtQgOV0H2dt3S8zjbYxW9+6BhFYUHKHDjT+xs7/cLwpqTjpe9eF7r+TOrVqCNm2CFAhrQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\rodri\\git-repos\\api-practice\\apiPractice\\ApiPractice.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rodri\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\rodri\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\rodri\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\rodri\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\rodri\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

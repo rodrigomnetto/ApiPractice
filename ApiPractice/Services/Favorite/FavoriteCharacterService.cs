@@ -10,17 +10,20 @@ namespace ApiPractice.Services.Favorite
         private readonly IFavoriteCharacterRepository _favoriteCharacterRepository;
 
         public FavoriteCharacterService(IFavoriteCharacterRepository favoriteCharacterRepository)
-        {
-            _favoriteCharacterRepository = favoriteCharacterRepository;
-        }
+            => _favoriteCharacterRepository = favoriteCharacterRepository;
 
-        public List<FavoriteCharacter> Find(int skip, int take)
-        {
-            return _favoriteCharacterRepository.Find(skip, take);
-        }
-
+        public FavoriteCharacter FindById(Entities.User.User user, long id)
+            => _favoriteCharacterRepository.FindById(user, id);
+        
+        public List<FavoriteCharacter> Find(Entities.User.User user, int skip, int take)
+            => _favoriteCharacterRepository.Find(user, skip, take);
+        
         public bool Create(FavoriteCharacter favoriteCharacter)
         {
+            var foundCharacter = _favoriteCharacterRepository.FindByCharacterAndUser(favoriteCharacter.Character.Id, favoriteCharacter.User.Id);
+
+            if (foundCharacter != null) return false;
+
             _favoriteCharacterRepository.Create(favoriteCharacter);
 
             return _favoriteCharacterRepository.SaveChanges();

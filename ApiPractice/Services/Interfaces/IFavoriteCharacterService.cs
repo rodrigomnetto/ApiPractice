@@ -4,7 +4,9 @@ namespace ApiPractice.Services.Interfaces
 {
     public interface IFavoriteCharacterService
     {
-        List<Entities.Favorite.FavoriteCharacter> Find(int skip, int take);
+        Entities.Favorite.FavoriteCharacter FindById(Entities.User.User user, long id);
+
+        List<Entities.Favorite.FavoriteCharacter> Find(Entities.User.User user, int skip, int take);
 
         bool Create(Entities.Favorite.FavoriteCharacter favoriteCharacter);
 

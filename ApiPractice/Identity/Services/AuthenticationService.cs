@@ -14,9 +14,7 @@ namespace ApiPractice.Identity.Services
         private IOptions<AuthenticationSettings> _authenticationOptions;
 
         public AuthenticationService(IOptions<AuthenticationSettings> authenticationOptions)
-        {
-            _authenticationOptions = authenticationOptions;
-        }
+            => _authenticationOptions = authenticationOptions;
 
         public string GenerateToken(Entities.User.User user)
         {

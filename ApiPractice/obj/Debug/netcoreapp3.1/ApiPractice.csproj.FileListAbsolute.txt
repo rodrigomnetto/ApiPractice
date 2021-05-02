@@ -96,3 +96,4 @@ C:\Users\rodri\git-repos\api-practice\apiPractice\obj\Debug\netcoreapp3.1\ApiPra
 C:\Users\rodri\git-repos\api-practice\apiPractice\obj\Debug\netcoreapp3.1\ApiPractice.dll
 C:\Users\rodri\git-repos\api-practice\apiPractice\obj\Debug\netcoreapp3.1\ApiPractice.pdb
 C:\Users\rodri\git-repos\api-practice\apiPractice\obj\Debug\netcoreapp3.1\ApiPractice.genruntimeconfig.cache
+C:\Users\rodri\git-repos\api-practice\apiPractice\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
